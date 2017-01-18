@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Currency;
 import java.util.List;
 
+
+
 public class ShippingOption {
     public static final List<String> TYPES = Arrays.asList("truck", "truckViaHighway", "expressCourier",
             "timeMachine");
@@ -26,6 +28,14 @@ public class ShippingOption {
     private final int TimeMachineCost = 6000000;
 //    -------------------------------
 
+    /**
+     * The constructor makes different objects depends on the type.
+     * @param type
+     * @param originFound
+     * @param destinationFound
+     * @param distanceInKm
+     * @param timeInHours
+     */
 
     public ShippingOption(String type, String originFound, String destinationFound, float distanceInKm, float timeInHours) {
         this.originFound = originFound;
@@ -34,8 +44,7 @@ public class ShippingOption {
         int roundedDistanceInKm = (int) Math.ceil(distanceInKm) < 1 ? 1 : (int) Math.ceil(distanceInKm);
 
         switch (type) {
-            case "truck":
-                this.distanceInKm = roundedDistanceInKm;
+            case "truck":this.distanceInKm = roundedDistanceInKm;
                 this.timeInHours = roundedTimeInHours;
                 this.details = "Standard truck avoiding highways";
                 this.cost = (int) Math.ceil(roundedDistanceInKm * StandardFeePerKm);

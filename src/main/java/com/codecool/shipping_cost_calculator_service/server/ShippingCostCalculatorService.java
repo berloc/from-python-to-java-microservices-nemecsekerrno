@@ -10,8 +10,10 @@ import static spark.Spark.*;
 import static spark.debug.DebugScreen.enableDebugScreen;
 
 /**
- * Created by berloc on 2017.01.10..
+ * Responsible for running the server.
  */
+
+
 public class ShippingCostCalculatorService {
 
     private ShippingCostCalculatorController controller;
